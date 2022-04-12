@@ -21,6 +21,7 @@ export const SubTotal = () => {
         thousandSeparator={true}
         prefix={"$"}
       />
+      <button>Proceed To CheckOut</button>
     </div>
   );
 };

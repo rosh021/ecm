@@ -18,6 +18,7 @@ export const Home = () => {
             price={34.95}
             image="https://images-na.ssl-images-amazon.com/images/I/41A1HlpXkpL._SX404_BO1,204,203,200_.jpg"
             rating={5}
+            id="1"
           />
           <Product
             title="JavaScript and jQuery: Learn JavaScript and jQuery quickly by building fun, interactive, and
@@ -25,6 +26,7 @@ export const Home = () => {
             price={18.9}
             image="https://images-na.ssl-images-amazon.com/images/I/31SRWF+LkKL._SX398_BO1,204,203,200_.jpg"
             rating={4}
+            id="2"
           />
         </div>
         <div className="home__row">
@@ -33,12 +35,14 @@ export const Home = () => {
             price={15.96}
             image="https://images-na.ssl-images-amazon.com/images/I/51hnOZHAntL._SX403_BO1,204,203,200_.jpg"
             rating={4}
+            id="3"
           />
           <Product
             title="Node.js Design Patterns: Design and implement production-grade Node.js applications using proven patterns and techniques."
             price={64.01}
             image="https://m.media-amazon.com/images/I/71yDpbdEY+L._AC_UY218_.jpg"
             rating={4}
+            id="4"
           />
           <Product
             title="The Road to React: Learn React quickly by building fun, interactive, and
@@ -46,6 +50,7 @@ export const Home = () => {
             price={29.78}
             image="https://m.media-amazon.com/images/I/511-vIg1HaL._AC_UY218_.jpg"
             rating={4}
+            id="5"
           />
         </div>
         <div className="home__row">
@@ -54,6 +59,7 @@ export const Home = () => {
             price={34.47}
             image="https://images-na.ssl-images-amazon.com/images/I/41VGV9-ewcL._SX403_BO1,204,203,200_.jpg"
             rating={3}
+            id="6"
           />
           <Product
             title="HTML, CSS, and JavaScript All in One: Learn HTML, CSS and  JavaScript quickly by building fun, interactive, and
@@ -61,6 +67,7 @@ export const Home = () => {
             price={23.96}
             image="https://m.media-amazon.com/images/I/41jTCuy9tbL._AC_UY218_.jpg"
             rating={4}
+            id="7"
           />
         </div>
       </div>

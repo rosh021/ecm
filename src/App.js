@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import { CheckOut } from "./Components/checkout/CheckOut";
@@ -5,6 +6,7 @@ import { Home } from "./Components/display/Home";
 import { Header } from "./Components/heading/Header";
 
 function App() {
+  
   return (
     <Router>
       <div className="app">
