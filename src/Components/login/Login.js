@@ -1,27 +1,73 @@
 import React, { useState } from "react";
 import "./login.css";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "./firebase";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import BedroomBabyIcon from "@mui/icons-material/BedroomBaby";
+import { async } from "@firebase/util";
 
 export const Login = () => {
+  const history = useHistory();
   const [email, setEmail] = useState("");
-  const [password, setPasword] = useState("");
+  const [password, setPassword] = useState("");
 
-  const signIn = (e) => {
+  const signIn = async (e) => {
     e.preventDefault();
+
+    try {
+      const user = await signInWithEmailAndPassword(auth, email, password);
+      if (user) {
+        history.push("/");
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+
+    // console.log(e);
+
+    // auth
+    //   .signInWithEmailAndPassword(email, password)
+    //   .then((auth) => {
+    //     // history.push("/");
+    //     console.log(auth);
+    //   })
+    //   .catch((error) => alert(error.message));
   };
 
-  const register = (e) => {
+  const register = async (e) => {
     e.preventDefault();
+
+    try {
+      const user = await createUserWithEmailAndPassword(auth, email, password);
+      if (user) {
+        alert("User is Successfully Created");
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+
+    // auth
+    //   .createUserWithEmailAndPassword(email, password)
+    //   .then((auth) => {
+    //     if (auth) {
+    //       console.log(auth);
+    //       // history.push("/");
+    //     } //it create the user name and password
+    //   })
+    //   .catch((error) => alert(error.message));
   };
+
   return (
     <div className="login">
-      <Link to="/">
-        <img
-          className="login__logo"
-          src="https://s.yimg.com/fz/api/res/1.2/Y6_2JrgbOtmw17xWJcdJyw--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTEyMDtxPTgwO3c9MTY2/https://s.yimg.com/zb/imgv1/5f2270c1-a608-31a5-b210-32579831f7ce/t_500x300"
-          alt=""
-        />
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <div className="header__logo">
+          <BedroomBabyIcon fontSize="large" className="header__logoIcon" />
+          <h2 className="header__logoName">eShop</h2>
+        </div>
       </Link>
 
       <div className="login__container">
@@ -30,10 +76,10 @@ export const Login = () => {
         <form>
           <h5>E-mail</h5>
           <input
-            type="text"
+            type="email"
             required
             value={email}
-            onChange={(e) => e.target.value}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <h5>Password</h5>
@@ -41,7 +87,7 @@ export const Login = () => {
             type="password"
             value={password}
             required
-            onChange={(e) => e.target.value}
+            onChange={(e) => setPassword(e.target.value)}
           />
 
           <button className="login__signButton" onClick={signIn} type="submit">
@@ -52,7 +98,11 @@ export const Login = () => {
           By signing-in you agree to trams and conditions of Amazon Clone.
           Please see our Privacy Notice.
         </p>
-        <button className="login__registerButton" onClick={register}>
+        <button
+          className="login__registerButton"
+          type="submit"
+          onClick={register}
+        >
           Create Your Amazon Account
         </button>
       </div>

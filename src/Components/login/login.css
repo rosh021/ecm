@@ -1,9 +1,18 @@
 .login {
   height: 100vh;
   display: flex;
-  background-color: white;
+  background-color: lightgrey;
   flex-direction: column;
   align-items: center;
+  padding-top: 20px;
+}
+
+.header__logo {
+  padding-top: 10px;
+}
+
+.header__logoName {
+  color: black;
 }
 
 .login__logo {
@@ -21,12 +30,14 @@
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  border: 1px solid lightgray;
+  border: 1px solid rgba(245, 214, 214, 0.9);
+  background-color: white;
   padding: 20px;
+  padding-top: 20px;
+  margin-top: 20px;
 }
 
 .login__container > h1 {
- 
   margin-bottom: 20px;
   font-size: 2rem;
 }

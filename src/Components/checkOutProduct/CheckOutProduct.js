@@ -28,7 +28,7 @@ export const CheckOutProduct = ({ title, price, rating, image,id }) => {
                 <p>⭐</p>
               ))}
           </div>
-          <button onClick={handelOnRemove}>Remove From Basket</button>
+          <button className="remove" onClick={handelOnRemove}>Remove From Basket</button>
         </div>
       </div>
     </div>
